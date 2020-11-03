@@ -18,7 +18,7 @@ This project contains the R code used for data-processing and statistical analys
 | 4_statistical_prep.R             | Apply filtering criteria to obtain final working data. Divide data into multiple time periods and biomes. |
 | 5_multivariate_model.R           | Fit multivariate model                                       |
 | 6_moving_subset.R                | Moving subset analysis for examining temporal R<sub>S</sub> trends across windows of time period, latitude and SOC stocks. Both simple linear regression and robust regression methods are used to calculate temporal trends. |
-| 7_Linear_regressions_Rs.R        | Linear regressions of  R<sub>S</sub> vs. time and R<sub>S</sub> vs. climatic factors. Both simple linear regression and robust regression are used. |
+| 7_Linear_regressions_Rs.R        | Breakpoint detection of R<sub>S</sub> temporal trend. Linear regressions of  R<sub>S</sub> vs. time and R<sub>S</sub> vs. climatic factors. Both simple linear regression and robust regression are used. |
 | 8_climate_trends.R               | Examine temporal trends of temperature, precipitation and the anamolies across latitude gradients. |
 | 9_RhRa_analysis.R                | All-in-one analysis script for Rh&Ra data, including data screening, multivariate model fitting and linear regressions. |
 | 10_montecarlo.R                  | Estimate annual global R<sub>S</sub> with Monte Carlo simulation, including variable extraction, model construction, Monte Carlo simulation, and results summarization. |
