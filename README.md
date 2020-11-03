@@ -24,6 +24,8 @@ This project contains the R code used for data-processing and statistical analys
 | 10_montecarlo.R                  | Estimate annual global R<sub>S</sub> with Monte Carlo simulation, including variable extraction, model construction, Monte Carlo simulation, and results summarization. |
 | README.md                        | Generates this README                                        |
 
+## List of files under "reference datasets" directory
+
 | File                                            | Description                                                  |
 | ----------------------------------------------- | ------------------------------------------------------------ |
 | 01_cleaneddata.csv                              | Output file from 1_data_cleaning.R                           |
