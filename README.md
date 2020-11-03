@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project contains the R code used for data-processing and statistical analysis for the research paper *Temporal changes of global soil respiration since 1987* (Lei et al.,2020). All datasets in support of the findings of this paper are also provided.
+This project contains the R code used for data-processing and statistical analysis for the research paper *Temporal changes of global soil respiration since 1987 (Lei et al.,2020)*. All datasets in support of the findings of this paper are also provided.
 
 
 
