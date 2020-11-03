@@ -21,7 +21,8 @@ This project contains the R code used for data-processing and statistical analys
 | 7_Linear_regressions_Rs.R        | Breakpoint detection of R<sub>S</sub> temporal trend. Linear regressions of  R<sub>S</sub> vs. time and R<sub>S</sub> vs. climatic factors. Both simple linear regression and robust regression are used. |
 | 8_climate_trends.R               | Examine temporal trends of temperature, precipitation and the anamolies across latitude gradients. |
 | 9_RhRa_analysis.R                | All-in-one analysis script for Rh&Ra data, including data screening, multivariate model fitting and linear regressions. |
-| 10_montecarlo.R                  | Estimate annual global R<sub>S</sub> with Monte Carlo simulation, including variable extraction, model construction, Monte Carlo simulation, and results summarization. |
+| 10_temp_anomaly_moving_subset.R                  | Moving window analysis of temperature anamoly along latitude gradients. |
+| 11_montecarlo.R                  | Estimate annual global R<sub>S</sub> with Monte Carlo simulation, including variable extraction, model construction, Monte Carlo simulation, and results summarization. |
 | README.md                        | Generates this README                                        |
 
 ## List of files under "reference datasets" directory
