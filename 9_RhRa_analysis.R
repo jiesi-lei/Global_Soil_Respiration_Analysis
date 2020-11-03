@@ -20,15 +20,6 @@ full.model.1$effect <- rownames(full.model.1)
 full.model.anova$effect <- rownames(full.model.anova)
 full.model.1 = merge(full.model.anova,full.model.1,by = 'effect',all = TRUE)
 write.csv(full.model.1,paste0(workingpath,'Rh.fullmodel.csv'),row.names=FALSE)
-###Stepwise
-full.model.1 <-model.cof(multi.lm) 
-model.1 <-model.cof(step(multi.lm,direction = "both"))
-step.model <- step(multi.lm,direction = "both")
-aov.modle.1 <- anova(step(multi.lm,direction = 'both'))
-aov.modle.1$effect <- rownames(aov.modle.1)
-model.1$effect <- rownames(model.1)
-Step.model.1 = merge(aov.modle.1,model.1,by = 'effect',all = TRUE)
-write.csv(Step.model.1,paste0(workingpath,'Rh.stepwise.csv'),row.names=FALSE)
 
 
 ##Ra
@@ -41,15 +32,6 @@ full.model.1$effect <- rownames(full.model.1)
 full.model.anova$effect <- rownames(full.model.anova)
 full.model.1 = merge(full.model.anova,full.model.1,by = 'effect',all = TRUE)
 write.csv(full.model.1,paste0(workingpath,'Ra.fullmodel.csv'),row.names=FALSE)
-###Stepwise
-full.model.1 <-model.cof(multi.lm) 
-model.1 <-model.cof(step(multi.lm,direction = "both"))
-step.model <- step(multi.lm,direction = "both")
-aov.modle.1 <- anova(step(multi.lm,direction = 'both'))
-aov.modle.1$effect <- rownames(aov.modle.1)
-model.1$effect <- rownames(model.1)
-Step.model.1 = merge(aov.modle.1,model.1,by = 'effect',all = TRUE)
-write.csv(Step.model.1,paste0(workingpath,'Ra.stepwise.csv'),row.names=FALSE)
 
 #Rh~year
 summary(lm(Rh_annual~Study_midyear, data = Rh.data))
