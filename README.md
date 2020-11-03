@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project contains the R code used for data-processing and statistical analysis for the research paper *Temporal changes of global soil respiration since 1987* (Lei et al.). All datasets in support of the findings of this paper are also provided.
+This project contains the R code used for data-processing and statistical analysis for the research paper *Temporal changes of global soil respiration since 1987* (Lei et al.,2020). All datasets in support of the findings of this paper are also provided.
 
 
 
@@ -28,8 +28,8 @@ This project contains the R code used for data-processing and statistical analys
 | ----------------------------------------------- | ------------------------------------------------------------ |
 | 01_cleaneddata.csv                              | Output file from 1_data_cleaning.R                           |
 | 02_sampledataset.csv                            | Output file from 2_climatic_variable_extraction.R            |
-| 03_processed_data_complete_final.csv            | Output file from 3_variables_generation.R. **Final output from R<sub>S</sub> data preparation. ** |
-| 04_processed_data_rhra.csv                      | **Final output from R<sub>h</sub>/R<sub>a</sub> data preparation. ** |
+| 03_processed_data_complete_final.csv            | Output file from 3_variables_generation.R. **Final output from R<sub>S</sub> data preparation.** |
+| 04_processed_data_rhra.csv                      | **Final output from R<sub>h</sub>/R<sub>a</sub> data preparation.** |
 | NOLAI-BASE_ANALYSIS_gf_final_1987-2016_1000.csv | Output file from 10_montecarlo.R. Estimated global annual R<sub>S</sub> from 1987-2016. |
 | Respiration-study-list.csv                      | A list of studies from which the records were collected      |
 | annual.precip.30y.csv                           | Intermediate output file from 3_variables_generation.R       |
@@ -40,8 +40,9 @@ This project contains the R code used for data-processing and statistical analys
 | srdb-data.csv                                   | SRDB v20200220a                                              |
 | temp_extract_result.csv                         | Output file from 2_climatic_variable_extraction.R            |
 
+## License
+This project is covered under the “GNU Affero General Public License” version 3.
+
 ## Authors
-
 Jiesi Lei, Xue Guo, Yufei Zeng, Jizhong Zhou, Qun Gao, and Yunfeng Yang.
-
 Genuine thanks go to Dr. Ben Bond-Lamberty for providing access to the SRDB.
