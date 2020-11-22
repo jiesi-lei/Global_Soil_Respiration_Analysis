@@ -85,47 +85,21 @@ mblm_eqn <- function(df){
        p = format(summary(m)$coefficients[2,4],digits = 2))
   return(eq)
 }
-### win scan function, need lm_eqn
-win_scan = function(dt,var,step=1,size=10){
-  win_left=win_right=min(dt[[var]])
-  win_range = Slope = R.square = P.value = Num = win_mid = data_mid = c()
-  # num:the counts of data in win
-  # data_mid: the mid point of used data in win
-  # win_mid: the mid point of win_range
-  while(win_right<max(dt[[var]])){
-    win_right=win_left+size
-    # process windata
-    win_data=dt[dt[[var]] >= win_left & dt[[var]] < win_right,] # excluded the data within edge
-    win_range=c(win_range,paste0(win_left,'-',win_right))
-    win_mid = c(win_mid,(win_left+win_right)/2) %>% as.numeric(.)
-    data_mid=c(data_mid,(max(win_data[[var]])+min(win_data[[var]]))/2) %>% as.numeric(.)
-    # lm method depend on the lm-result funtion lm_eqn
-    eq= lm_eqn(df=win_data)
-    Slope = c(Slope,eq[1]) %>% as.numeric(.)
-    R.square=c(R.square,eq[2])
-    P.value=c(P.value,eq[3])
-    Num = c(Num,nrow(win_data))
-    # 
-    win_left=win_left+step
-  }
-  winresult = data.frame(win_range,win_mid,data_mid,Slope,R.square,P.value,Num)
-}
-
 # win_step. enlarge the win step by step
 win_step = function(dt,var,step=1,size=10){
   
-  win_left=min(dt[[var]])
+  win_left=floor(min(dt[[var]]))
   win_right=win_left+size
-  win_range = Slope = R.square = P.value = Num = win_mid = data_mid = c()
+  win_range = Slope = R.square = P.value = Num = win_mid = data_mid = win_edge = c()
   # num:the counts of data in win
   # data_mid: the mid point of used data in win
   # win_edge: the right edge of win
-  while(win_right<max(dt[[var]])){
+  while(win_right<= max(dt[[var]])){
     
     # process windata
-    win_data=dt[dt[[var]] >= win_left & dt[[var]] <= win_right,] # included the data within edge
-    win_range=c(win_range,paste0(win_left,'-',win_right))
-    win_edge = c(win_edge,win_right) %>% as.numeric(.)
+    win_data=dt[dt[[var]] >= win_left & dt[[var]] < win_right,] # included the data within edge
+    win_range=c(win_range,paste0(win_left,'-',(win_right-1)))
+    win_edge = c(win_edge,(win_right-1)) %>% as.numeric(.)
     data_mid=c(data_mid,(max(win_data[[var]])+min(win_data[[var]]))/2) %>% as.numeric(.)
     # lm method depend on the lm-result funtion lm_eqn
     eq= lm_eqn(df=win_data)
