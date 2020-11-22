@@ -5,38 +5,15 @@ workingpath = paste0(getwd(),"/figures1014")
 #Breakpoint detection=============================================================
 #piece-wise regression
 dt = select(res.data,Latitude,Rs_annual,Study_midyear)
-
-# size determine the width of win
-winresult = win_scan(dt,var = 'Study_midyear',size = 12)
-winresult = win_scan(dt,var = 'Study_midyear',size = 11)
-winresult = win_scan(dt,var = 'Study_midyear',size = 10)
-winresult = win_scan(dt,var = 'Study_midyear',size = 9)#10 years
-winresult = win_scan(dt,var = 'Study_midyear',size = 8)
-winresult = win_scan(dt,var = 'Study_midyear',size = 7)
-
-# segment
-lin.mod <- lm(Slope~win_mid, data = winresult)
+lin.mod <- lm(Rs_annual~Study_midyear, data = dt)
 segmented.mod <- segmented(lin.mod)
-plot(winresult$win_mid,winresult$Slope, pch=16, ylim=c(0,120))
+plot(dt$Study_midyear,dt$Rs_annual, pch=16, ylim=c(0,120))
 plot(segmented.mod, add=T,)
 segmented.mod
-res = pettitt.test(winresult$Slope)
-winresult[res$estimate,"win_mid"]
-res <- br.test(winresult$Slope)
-winresult[res$estimate,"win_mid"]
-res <- bu.test(winresult$Slope)
-winresult[res$estimate,"win_mid"]
-res <- snh.test(winresult$Slope)
-winresult[res$estimate,"win_mid"]
 
-### exhaustion
-# size determined the starting year
 winresult = win_step(dt,var = 'Study_midyear',size = 11)
-winresult = win_step(dt,var = 'Study_midyear',size = 10)
-winresult = win_step(dt,var = 'Study_midyear',size = 9)
-winresult = win_step(dt,var = 'Study_midyear',size = 8)
-winresult = win_step(dt,var = 'Study_midyear',size = 7) #Straring from 1994
-
+winresult = win_step(dt,var = 'Study_midyear',size = 10)#Straring from 1996
+winresult = win_step(dt,var = 'Study_midyear',size = 9)#Straring from 1995
 
 lin.mod <- lm(Slope~win_edge, data = winresult)
 segmented.mod <- segmented(lin.mod)
@@ -45,13 +22,11 @@ plot(segmented.mod, add=T,)
 segmented.mod
 
 # other method
-res = pettitt.test(winresult$Slope)
-winresult[res$estimate,"win_edge"]#Y1999
-res <- br.test(winresult$Slope)
-winresult[res$estimate,"win_edge"]#Y1999
-res <- bu.test(winresult$Slope)
+res <- br.test(winresult$Slope)#Y2000
 winresult[res$estimate,"win_edge"]
-res <- snh.test(winresult$Slope)#Y2000
+res <- bu.test(winresult$Slope)#Y2000
+winresult[res$estimate,"win_edge"]
+res <- snh.test(winresult$Slope)#Y1999
 winresult[res$estimate,"win_edge"]
 
 #Test all possible breakpoints
