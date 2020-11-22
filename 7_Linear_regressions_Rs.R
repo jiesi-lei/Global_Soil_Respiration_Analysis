@@ -15,12 +15,6 @@ winresult = win_step(dt,var = 'Study_midyear',size = 11)
 winresult = win_step(dt,var = 'Study_midyear',size = 10)#Straring from 1996
 winresult = win_step(dt,var = 'Study_midyear',size = 9)#Straring from 1995
 
-lin.mod <- lm(Slope~win_edge, data = winresult)
-segmented.mod <- segmented(lin.mod)
-plot(winresult$win_edge,winresult$Slope, pch=16, ylim=c(0,120))
-plot(segmented.mod, add=T,)
-segmented.mod
-
 # other method
 res <- br.test(winresult$Slope)#Y2000
 winresult[res$estimate,"win_edge"]
